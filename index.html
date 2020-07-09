@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>URL欺骗演示</title>
+		<style>
+			*{font-family:Mukta,sans-serif;color:#3b3b3b}small{color:gray;font-weight:400;font-style:italic;font-size:16px;margin-top:-20px;display:block;margin-bottom:30px}small strong{font-weight:600;font-size:18px;color:inherit}h2{margin-top:40px;color:#424242}
+		</style>
+		<script>
+			onload = function() {
+				location = "/spoof";
+			}
+
+			onbeforeunload = function() {
+				document.getElementById("status").src = "/status";
+				return "";
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2>随便在页面内点一下，然后通过地址栏访问其他网址</h2>
+			<small>只在 <strong>Firefox</strong> 生效</small>
+			<img id="status" src="" style="visibility: hidden;"></img>
+		</center>
+	</body>
+</html>
